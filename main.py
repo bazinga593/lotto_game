@@ -12,6 +12,5 @@ if __name__ == '__main__':
         # Начинаем игру))
         game_loop.clear_console()
         game_loop.Game()
-        if game_loop.Game.play_again():
-            continue
-        break
+        if not game_loop.Game.play_again():
+            break
