@@ -42,12 +42,7 @@ class Game:
                 self.gamer_lose(self.player_card.name)
                 break
             # Обработка карточки компьютера
-            #############################################
-            self.computer_card.__contains__(number)
-
-            if number in self.computer_card:
-                pass
-            #############################################
+            number in self.computer_card
             # Проверка на количество зачеркнутых чисел
             if self.player_card.check_points():
                 self.gamer_win(self.player_card.name)
