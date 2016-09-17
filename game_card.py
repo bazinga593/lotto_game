@@ -1,4 +1,5 @@
 import random
+from copy import deepcopy
 
 
 class GameCard:
@@ -37,7 +38,7 @@ class GameCard:
 
     def __str__(self):
         # Создаем копии строк(списков)
-        self.print_rows = self.rows[:]
+        print_rows = deepcopy(self.rows)
         # Если длина первого элемента равна 1(т.е. первый элемент число), к нему добавляется пробел
         for x in self.print_rows:
             if len(str(x[0])) == 1:
@@ -46,17 +47,15 @@ class GameCard:
         border = '-' * 26
         head = '{0}\n{1}\n{0}'.format(border, self.name)
         return '{}\n{}\n{}\n{}\n{}'.format(head,
-                                           '|'.join(map(str, self.print_rows[0])),
-                                           '|'.join(map(str, self.print_rows[1])),
-                                           '|'.join(map(str, self.print_rows[2])),
+                                           '|'.join(map(str, print_rows[0])),
+                                           '|'.join(map(str, print_rows[1])),
+                                           '|'.join(map(str, print_rows[2])),
                                            border)
 
     def __contains__(self, keg_number):
         # Проверяем наличие числа(на боченке) в строках карточки, если совпадение есть, число "зачеркивается",
         # и возвращается True, иначе вернется False
         for row in self.rows:
-            if row[0] != '  ' and row[0] != '--':
-                row[0] = int(row[0])
             if keg_number in row:
                 index = row.index(keg_number)
                 row[index] = '--'
