@@ -40,7 +40,7 @@ class GameCard:
         # Создаем копии строк(списков)
         print_rows = deepcopy(self.rows)
         # Если длина первого элемента равна 1(т.е. первый элемент число), к нему добавляется пробел
-        for x in self.print_rows:
+        for x in print_rows:
             if len(str(x[0])) == 1:
                 x[0] = ' ' + str(x[0])
 
