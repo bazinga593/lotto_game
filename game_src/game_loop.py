@@ -1,8 +1,6 @@
 import os
-
 import game_kegs
-
-from game_src import game_card
+import game_card
 
 
 def clear_console():
