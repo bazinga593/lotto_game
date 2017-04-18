@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 
 import game_loop
-
-from game_src import greeting
+import greeting
 
 if __name__ == '__main__':
     # Приветствие и правила игры
